@@ -2,7 +2,11 @@
 #include <stddef.h>
 #include <stdint.h>
 
-static void (*draw_line)(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
+static void (*draw_line_ptr)(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
+
+static void draw_line(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1) {
+    draw_line_ptr(x0, y0, x1, y1);
+}
 
 // Test horizontal line (left to right)
 void test_horizontal_lr(void) {
@@ -301,7 +305,7 @@ test_entry tests[] = {
 };
 
 void set_test_draw_line_func(void (*func)(uint8_t, uint8_t, uint8_t, uint8_t)) {
-    draw_line = func;
+    draw_line_ptr = func;
 }
 
 const char *get_test_name(uint8_t index) {

@@ -19,7 +19,7 @@ void main(void) {
 
 	uint32_t frames = 0;
 	frames = run_tests(0, 25, draw_line_asm, nameof(draw_line_asm));
-	//frames = run_tests(0, 32, draw_line_c, nameof(draw_line_c));
+	//frames = run_tests(0, 25, draw_line_c, nameof(draw_line_c));
 	print_frames(frames);
 
 	zx_border(INK_RED);
