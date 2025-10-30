@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "debug",
+      "type": "dezog",
+      "request": "launch",
+      "remoteType": "zsim",
+      "zsim": {
+        "visualMemory": true,
+        "preset": "spectrum",
+        "memoryModel": "ZX48K",
+      },
+      "z88dkv2": [
+        {
+          "path": "src/*.lis",
+          "srcDirs": [
+            "src"
+          ],
+          "mapFile": "build/program.map",
+          "excludeFiles": [],
+          "stopOnEntry": false,
+        }
+      ],
+      "load": "build/program.sna",
+      "rootFolder": "${workspaceFolder}",
+      "startAutomatically": true,
+      "tmpDir": "build",
+      "smartDisassemblerArgs": {
+        "lowerCase": false
+      },
+      "preLaunchTask": "build-sna"
+    }
+  ]
+}

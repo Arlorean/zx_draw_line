@@ -1,0 +1,27 @@
+// .vscode/c_cpp_properties.json
+{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "z88dk",
+      "intelliSenseMode": "gcc-x64",     // just for parsing
+      "compilerPath": "",                // don't set to zcc
+      "cStandard": "c11",
+      "defines": [
+        "SPECTRUM",
+        "__SPECTRUM",
+        "__SPECTRUM__",
+        "__Z80",
+        "__Z80__",
+        "__SDCC_IY",
+        "__Z88DK_NEWLIB",
+        "__Z88DK",
+        "__SDCC",
+        "__INTELLISENSE__" // #undef macros for intellisense in VSCode
+      ],
+      "includePath": [
+        "${env:ZCCCFG}/../../include/_DEVELOPMENT/sdcc"
+      ]
+    }
+  ]
+}

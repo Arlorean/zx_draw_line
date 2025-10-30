@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-sna",
+      "type": "shell",
+      "command": "make build/program.sna",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "build-tap",
+      "type": "shell",
+      "command": "make build/program.tap",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "clean",
+      "type": "shell",
+      "command": "make clean",
+      "problemMatcher": []
+    },
+    {
+      "label": "run",
+      "dependsOn": "build-tap",
+      "type": "process",
+      "command": "fuse",
+      "args": [
+        "${workspaceFolder}\\build\\program.tap"
+      ],
+      "windows": {
+        "command": "${env:ProgramFiles(x86)}\\Fuse\\fuse.exe",
+      },
+      "osx": {
+        "command": "/usr/bin/open",
+        "args": [
+          "-na",            // new instance (helps ensure args are used)
+          "/Applications/Fuse.app",
+          "--args",
+          "${workspaceFolder}/build/program.tap"
+        ],
+      },
+      "problemMatcher": []
+    } 
+  ]
+}

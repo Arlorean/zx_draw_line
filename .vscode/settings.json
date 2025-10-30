@@ -1,0 +1,57 @@
+{
+  "editor.semanticHighlighting.enabled": true,
+  "betterStatusBar.commands": [
+    {
+      "id": "run",
+      "label": "$(play) Run",
+      "command": "workbench.action.tasks.runTask",
+      "args": ["run"],
+      "tooltip": "Start Fuse",
+      "color": "cyan",
+      "useVsCodeApi": true
+    },
+    {
+      "id": "debug",
+      "label": "$(play) Debug",
+      "command": "workbench.action.debug.start",
+      "tooltip": "Start debugging",
+      "color": "green",
+      "useVsCodeApi": true
+    },
+    {
+      "id": "build",
+      "label": "$(tools) Build",
+      "tooltip": "make",
+      "command": "workbench.action.tasks.runTask",
+      "args": ["build-sna"],
+      "color": "yellow",
+      "useVsCodeApi": true
+    },
+    {
+      "id": "clean",
+      "label": "$(clear-all) Clean",
+      "tooltip": "make clean",
+      "command": "workbench.action.tasks.runTask",
+      "args": ["clean"],
+      "color": "red",
+      "useVsCodeApi": true
+    }
+  ],
+  "files.associations": {
+    ".fantomasignore": "ignore",
+    "zx.h": "c",
+    "stdio.h": "c",
+    "input.h": "c",
+    "time.h": "c",
+    "stdint.h": "c",
+    "im2.h": "c",
+    "intrinsic.h": "c",
+    "stdlib.h": "c",
+    "string.h": "c",
+    "z80.h": "c",
+    "frame_counter.h": "c",
+    "draw_line.h": "c",
+    "stddef.h": "c",
+    "tests.h": "c"
+  }
+}
